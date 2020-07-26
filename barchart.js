@@ -3,7 +3,7 @@
     return data   
   });
   statedata.then(function(data) {
-
+console.log ("sdfdsf");
  const svg = d3.select('svg');
   const svgContainer = d3.select('#container');
   
