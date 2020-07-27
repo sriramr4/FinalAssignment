@@ -12,7 +12,7 @@ var parameters = location.search.substring(1).split("&");
   }
 document.title = PageTitle
 
-  const statedata =  d3.csv("./data/county.csv").then(function(data) 
+  const statedata =  d3.csv("./data/County.csv").then(function(data) 
   {
     return data 
   });
