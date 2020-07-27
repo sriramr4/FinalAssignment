@@ -1,4 +1,4 @@
-
+console.log("ENter the JS");
   const statedata =  d3.csv("./data/statedata.csv").then(function(data) 
   {
     return data   
