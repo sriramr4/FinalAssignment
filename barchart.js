@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
   const statedata =  d3.csv("http://localhost/FinalAssignment/data/statedata.csv").then(function(data) 
   {
     return data   
@@ -370,4 +370,3 @@ console.log ("sdfdsf");
     .attr('text-anchor', 'start')
     //.text('Source: Stack Overflow, 2018')
 });
->>>>>>> a139de7637bad6b5fa03dc567153f344e649a651
