@@ -78,7 +78,7 @@ console.log("ENter the JS");
     .attr('height', (g) => height - yScale(g.value))
     .attr('width', xScale.bandwidth())    
      .on('click', function (actual, i) {        
-         url = 'http://localhost/FinalAssignment/uscountybystated3js.html?state=' + actual.state;
+         url = './uscountybystated3js.html?state=' + actual.state;
          document.location.href = url;      
      })
       .on("mousemove", function(d){
