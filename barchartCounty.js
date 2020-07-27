@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var parameters = location.search.substring(1).split("&");
 
   var temp = parameters[0].split("=");
@@ -416,4 +415,4 @@ document.title = PageTitle
 
 
 });
->>>>>>> a139de7637bad6b5fa03dc567153f344e649a651
+
