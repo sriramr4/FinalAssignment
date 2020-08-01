@@ -172,8 +172,8 @@
 	
 
 });
- document.body.innerHTML = document.body.innerHTML + "<br>"
-  document.body.innerHTML = document.body.innerHTML + "<font size =5><B><Center>As of 8/01/2020 Total Number of Cases in the USA has reached to <BR> "+numberWithCommas(196385369)+"  </B></center> </font>";
+  document.body.innerHTML = document.body.innerHTML + "<br>"
+  document.body.innerHTML = document.body.innerHTML + "<font size =5><B><Center>As of <I>8/01/2020 </I> Total Number of Cases in the USA has reached to <BR><I> "+numberWithCommas(196385369)+"  </B></i></center> </font>";
 
 
 function numberWithCommas(x) {
