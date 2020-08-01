@@ -149,9 +149,9 @@ document.title = PageTitle
   
   svg
     .append('text')
-    .attr('class', 'label')
+    .attr('class', 'title')
     .attr('x', -(height / 2) - margin)
-    .attr('y',10)// margin / 2.4)
+    .attr('y',15)// margin / 2.4)
     .attr('transform', 'rotate(-90)')
     .attr('text-anchor', 'middle')
     .text('Covid Cases')

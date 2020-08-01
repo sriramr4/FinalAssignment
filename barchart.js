@@ -141,10 +141,9 @@
   
   svg
     .append('text')
-    .attr('class', 'label')
+    .attr('class', 'title')
     .attr('x', -(height / 2) - margin)
-    .attr('y', 10)
-	.attr('fontSize',300)
+    .attr('y', 15)
     .attr('transform', 'rotate(-90)')
     .attr('text-anchor', 'middle')
     .text('Covid Cases')
@@ -155,16 +154,6 @@
     .attr('y', height + margin * 1.7)
     .attr('text-anchor', 'middle')
 	
-
- // svg.append('text')
- //   .data(data)
- //   .attr('class', 'label')
- //   .attr('x', 500)
- //   .attr('y', 75)
-//	.attr('text-anchor', 'middle')
- //   .text('New York with highest number of cases: ' + numberWithCommas(max))
-//	.attr('font-size', '20px')
- //   .attr('fill', 'red');
 
 
 	svg.append('text')
@@ -183,8 +172,8 @@
 	
 
 });
-
-  document.body.innerHTML = document.body.innerHTML + "<B><Center>As of 8/01/2020 Total Number of Cases in the USA has reached to <BR> "+numberWithCommas(196385369)+"  </B></center> ";
+ document.body.innerHTML = document.body.innerHTML + "<br>"
+  document.body.innerHTML = document.body.innerHTML + "<font size =5><B><Center>As of 8/01/2020 Total Number of Cases in the USA has reached to <BR> "+numberWithCommas(196385369)+"  </B></center> </font>";
 
 
 function numberWithCommas(x) {
