@@ -3,19 +3,19 @@
 		background-color: White
       }
       .axis {
-        font: 15px Times;
+        font: 30px Times;
     }
     .axis path,
     .axis line {
       fill: none;
       stroke: #D4D8DA;
-      stroke-width: 1px;
+      stroke-width: 3px;
       shape-rendering: crispEdges;
     }
      .toolTip {
         position: absolute;
         display: none;
-        min-width: 60px;
+        min-width: 80px;
         height: auto;
         background: none repeat scroll 0 0 #ffffff;
         padding: 14px;
@@ -87,7 +87,7 @@
       }
       
       text.label {
-        font-size: 14px;
+        font-size: 22px;
         font-weight: 400;
       }
       

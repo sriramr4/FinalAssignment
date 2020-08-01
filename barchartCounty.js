@@ -19,13 +19,8 @@ document.title = PageTitle
 
 
   statedata.then(function(data1) {
-  console.log(statefilter)
-  //console.log (data1)
   const  countydata1 = data1.filter(function(d){return parseInt(d.value) >= 20000;});
   const  countydata = countydata1.filter(function(d){return d.state == statefilter;});
-  console.log (countydata)
-
-
 
   const svg = d3.select('svg');
   const svgContainer = d3.select('#container');
@@ -88,10 +83,13 @@ document.title = PageTitle
 	  .on("mouseover", function(d){
         tooltip
 	   .style("visibility", "visible")
-	   .html("<font color=Black><center> Number of Case in "+ (d.county) + " , " + (d.state) +"<br>" + "" + numberWithCommas(d.value) + "</font></center>");
+	   .style("left", (d3.event.pageX + 15) + "px")	
+	   .style("top", (d3.event.pageY - 100) + "px")
+	 //  .style("display", "inline-block")
+	   .html("<font color=Black><b><center> Number of Cases in "+ (d.county) + " , " + (d.state) +"<br>" + "" + numberWithCommas(d.value) + "</font></b></center>");
      })
 	
-	.on('mousemove', function (actual, i) {
+	.on('mouseenter', function (actual, i) {
       d3.selectAll('.value')
         .attr('opacity', 0)
 
@@ -138,7 +136,7 @@ document.title = PageTitle
     })
 	.on ('mouseout',function (){
 		d3.selectAll('.tooltip')
-			.style("visibility", "hidden");
+			.style("visibility", "visible");
 	})
 
   barGroups 

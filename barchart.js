@@ -3,12 +3,9 @@
     return data   
   });
   
-  
-  
-  
   statedata.then(function(data) {
   var max = (d3.max(data, function(d) { return parseInt(d.value); }));
-  
+   
   const svg = d3.select('svg');
   const svgContainer = d3.select('#container');
   
@@ -72,20 +69,18 @@
     .attr('height', (g) => height - yScale(g.value))
     .attr('width', xScale.bandwidth())    
      .on('click', function (actual, i) {        
-         url = 'http://localhost/FinalAssignment/uscountybystated3js.html?state=' + actual.state;
+         url = './uscountybystated3js.html?state=' + actual.state;
          document.location.href = url;      
      })
       .on("mousemove", function(d){
          tooltip
            .style("visibility", "visible")
-		   //.style("left", (d3.event.pageX + 15) + "px")		
-           
-		   .style ("top",100+"px")
-		   //.style("top", (d3.event.pageY - 100) + "px")
+		   .style("left", (d3.event.pageX + 15) + "px")		
+		   .style("top", (d3.event.pageY - 100) + "px")
 		   .style("opacity", .7)
            .style("display", "inline-block")
 		   
-           .html("<font color=black name = Times ><center><b> Number of Cases in "+(d.state)+"<br> "+ numberWithCommas(d.value) + "</b></font></center>");
+           .html("<font color=black name = Times ><center><b> Number of Cases in "+(d.state)+"<br>"+ numberWithCommas(d.value) + "</b></font></center>");
      })
 	 
 
@@ -104,12 +99,6 @@
       console.log(actual.state)
       const y = yScale(actual.value)
       
-      line = chart.append('line')
-        .attr('id', 'limit')
-        .attr('x1', 0)
-        .attr('y1', y)
-        .attr('x2', width)
-        .attr('y2', y)
 
       barGroups.append('text')
         .attr('class', 'divergence')
@@ -140,7 +129,7 @@
 	
 	.on ('mouseout',function (){
 		d3.selectAll('.tooltip')
-			//.style("visibility", "hidden");
+			.style("visibility", "hidden");
 	})
 	
   barGroups 
@@ -155,6 +144,7 @@
     .attr('class', 'label')
     .attr('x', -(height / 2) - margin)
     .attr('y', 10)
+	.attr('fontSize',300)
     .attr('transform', 'rotate(-90)')
     .attr('text-anchor', 'middle')
     .text('Covid Cases')
@@ -166,27 +156,36 @@
     .attr('text-anchor', 'middle')
 	
 
-  svg.append('text')
-    .data(data)
-    .attr('class', 'annotation')
-    .attr('x', 500)
-    .attr('y', 100)
-    //.style ("top",-500+"px")
-	.attr('text-anchor', 'middle')
-	.attr('fontSize',500)
-    .text('New York with highest number of cases:' + numberWithCommas(max))
+ // svg.append('text')
+ //   .data(data)
+ //   .attr('class', 'label')
+ //   .attr('x', 500)
+ //   .attr('y', 75)
+//	.attr('text-anchor', 'middle')
+ //   .text('New York with highest number of cases: ' + numberWithCommas(max))
+//	.attr('font-size', '20px')
+ //   .attr('fill', 'red');
+
+
+	svg.append('text')
+    .attr('class', 'title')
+    .attr('x', width / 2 + margin)
+    .attr('y', 40)
+    .attr('text-anchor', 'middle')
+    .text('Number of Covid-19 Cases in the United States')
+	
 
   svg.append('text')
     .attr('class', 'source')
     .attr('x', width - margin / 2)
     .attr('y', height + margin * 1.7)
     .attr('text-anchor', 'start')
+	
+
 });
 
+  document.body.innerHTML = document.body.innerHTML + "<B><Center>As of 8/01/2020 Total Number of Cases in the USA has reached to <BR> "+numberWithCommas(196385369)+"  </B></center> ";
 
-  
-
-	
 
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
