@@ -1,4 +1,4 @@
-  const statedata =  d3.csv("http://localhost/FinalAssignment/data/statedata.csv").then(function(data) 
+  const statedata =  d3.csv("./data/statedata.csv").then(function(data) 
   {
     return data   
   });
