@@ -67,7 +67,7 @@
     .attr('x', (g) => xScale(g.state))
     .attr('y', (g) => yScale(g.value))
     .attr('height', (g) => height - yScale(g.value))
-    .attr('width', xScale.bandwidth())    
+    .attr('width', xScale.bandwidth())
      .on('click', function (actual, i) {        
          url = './uscountybystated3js.html?state=' + actual.state;
          document.location.href = url;      
@@ -101,11 +101,11 @@
       
 
       barGroups.append('text')
-        .attr('class', 'divergence')
         .attr('x', (a) => xScale(a.state) + xScale.bandwidth() / 2)
         .attr('y', (a) => yScale(a.value) + 30)
-        .attr('fill', 'white')
+        .attr('fill', 'Black')
         .attr('text-anchor', 'middle')
+		.text(function(d) { return a.value; })
 		
 		
 
@@ -149,11 +149,13 @@
     .text('Covid Cases')
 
   svg.append('text')
+	.transition()
+	.style('opacity',1)
     .attr('class', 'label')
-    .attr('x', width / 2 + margin)
-    .attr('y', height + margin * 1.7)
+    .attr('x', 800)
+    .attr('y', 150)
     .attr('text-anchor', 'middle')
-	
+	.text('New York with Highest Number of Cases -' + numberWithCommas(max))
 
 
 	svg.append('text')
@@ -172,8 +174,8 @@
 	
 
 });
-  document.body.innerHTML = document.body.innerHTML + "<br>"
-  document.body.innerHTML = document.body.innerHTML + "<font size =5><B><Center>As of <I>8/01/2020 </I> Total Number of Cases in the USA has reached to <BR><I> "+numberWithCommas(196385369)+"  </B></i></center> </font>";
+ document.body.innerHTML = document.body.innerHTML + "<br>"
+  document.body.innerHTML = document.body.innerHTML + "<font size =5><B><Center>As of <I>8/01/2020 </I> Number of Covid Cases in the USA has reached to <BR><I> "+numberWithCommas(196385369)+"  </B></i></center> </font>";
 
 
 function numberWithCommas(x) {
